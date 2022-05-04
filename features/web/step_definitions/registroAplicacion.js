@@ -1,28 +1,28 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
 
-When('Escribo el Site title {string}', async function (title) {
+When('Escribo el Site title {kraken-string}', async function (title) {
     let element = await this.driver.$('#blog-title');
     let isExisting = await element.isExisting();
     if(isExisting)
         return await element.setValue(title);
 });
 
-When('Escribo el Full name {string}', async function (name) {
+When('Escribo el Full name {kraken-string}', async function (name) {
     let element = await this.driver.$('#name');
     let isExisting = await element.isExisting();
     if(isExisting)
         return await element.setValue(name);
 });
 
-When('Escribo el Email address {string}', async function (email) {
+When('Escribo el Email address {kraken-string}', async function (email) {
     let element = await this.driver.$('#email');
     let isExisting = await element.isExisting();
     if(isExisting)
         return await element.setValue(email);
 });
 
-When('Escribo el Password {string}', async function (password) {
+When('Escribo el Password {kraken-string}', async function (password) {
     let element = await this.driver.$('#password');
     let isExisting = await element.isExisting();
     if(isExisting)
