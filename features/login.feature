@@ -1,6 +1,7 @@
 Feature: Ingresar a la aplicación ghost
+
   @user1 @web
-  Scenario: Como usuario quiero registrarme a ghost
+  Scenario: Como usuario quiero ingresar en caso de no existir el usuario quiero registrarme a ghost
     Given Ir a la aplicacion Ghost
       And I wait for 5 seconds
     When Escribo el Site title 'Mi blog de pruebas con kraken'
