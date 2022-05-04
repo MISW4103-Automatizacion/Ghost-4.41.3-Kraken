@@ -27,8 +27,8 @@ ghost start
 ## Instalar kraken de forma global
 npm install kraken-node -g
 
-## Crear un proyecto base
-kraken-node gen
+## Descargar el proyecto actual de pruebas
+https://github.com/MISW4103-Automatizacion/Ghost-4.41.3-Kraken.git
 
 ## Consideraciones adicionales
 ## Al momento de la ejecución de sus pruebas con Kraken, puede encontrarse con varios problemas. En primer lugar, como esta librería tiene # dependencias internas, como lo son Appium y Cucumber, es necesario que ambas sean accesibles para su entorno de ejecución.
