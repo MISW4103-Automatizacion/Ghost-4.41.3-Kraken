@@ -27,8 +27,9 @@ ghost start
 ## Instalar kraken de forma global
 npm install kraken-node -g
 
+## Asegurese de tener git instalador en ubuntu 20.04 LTS sino puede consultar esta pagina https://git-scm.com/download/linux
 ## Descargar el proyecto actual de pruebas
-https://github.com/MISW4103-Automatizacion/Ghost-4.41.3-Kraken.git
+git clone https://github.com/MISW4103-Automatizacion/Ghost-4.41.3-Kraken.git
 
 ## Consideraciones adicionales
 ## Al momento de la ejecución de sus pruebas con Kraken, puede encontrarse con varios problemas. En primer lugar, como esta librería tiene # dependencias internas, como lo son Appium y Cucumber, es necesario que ambas sean accesibles para su entorno de ejecución.
