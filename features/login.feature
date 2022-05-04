@@ -1,7 +1,7 @@
 Feature: Ingresar a la aplicación ghost
 
   @user1 @web
-  Scenario: Como usuario quiero ingresar en caso de no existir el usuario, quiero registrarlo en ghost
+  Scenario: Como usuario quiero ingresar a la aplicación, en caso de no existir el usuario, quiero registrarlo en ghost
     Given Ir a la aplicacion Ghost "<URL>"
       And I wait for 5 seconds
     When Escribo el Site title "<NAMEBLOG>"
