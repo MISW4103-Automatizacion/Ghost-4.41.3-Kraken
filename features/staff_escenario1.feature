@@ -1,7 +1,7 @@
-Feature: Ingresar a la aplicación ghost
+Feature: Crear staff de tipo Contributor en ghost
 
   @user1 @web
-  Scenario: Como usuario quiero ingresar a la aplicación, en caso de no existir el usuario, quiero registrarlo en ghost
+  Scenario: Como usuario quiero agregar un staff de tipo Contributor
     Given Ir a la aplicacion Ghost "<URL>"
       And I wait for 5 seconds
     When Escribo el Site title "<NAMEBLOG>"
@@ -19,3 +19,13 @@ Feature: Ingresar a la aplicación ghost
       And Doy clic en el boton Sing In
       And I wait for 2 seconds
     Then Deberia ver la palabra 'Dashboard' en el página principal
+    When Doy clic en el boton settings
+      And Doy clic en el boton staff
+      And Doy clic en el boton invite people
+      And Escribo el correo electronico de la invitacion
+      And Doy click en el radio boton Contributor
+      And Doy click en el boton Send invitation now
+    Given Ir a la aplicacion Ghost "<URL>"
+    When Doy clic en el boton settings
+      And Doy clic en el boton staff
+    Then Debe aparecer el staff en la lista
