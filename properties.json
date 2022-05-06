@@ -1,5 +1,6 @@
 {
-    "URL": "http://localhost:2368/ghost",
+    "URL": "http://localhost:2369/ghost",
+    "URL2": "http://localhost:2369",
     "NAMEBLOG": "Mi blog de pruebas con kraken",
     "FULLNAME": "Pruebas E2E en kraken",
     "USER": "krakenTest@kraken.com.co",
