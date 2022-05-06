@@ -1,7 +1,7 @@
-Feature: Crear staff de tipo Contributor en ghost
+Feature: Eliminar staff de tipo Editor en ghost
 
   @user1 @web
-  Scenario: Como usuario quiero agregar un staff de tipo Contributor
+  Scenario: Como usuario quiero agregar un staff y eliminarlo de tipo Editor
     Given Ir a la aplicacion Ghost "<URL>"
       And I wait for 5 seconds
     When Escribo el Site title "<NAMEBLOG>"
@@ -23,9 +23,11 @@ Feature: Crear staff de tipo Contributor en ghost
       And Doy clic en el boton staff
       And Doy clic en el boton invite people
       And Escribo el correo electronico de la invitacion
-      And Doy click en el radio boton Contributor
+      And Doy click en el radio boton Editor
       And Doy click en el boton Send invitation now
     Given Ir a la aplicacion Ghost "<URL>"
     When Doy clic en el boton settings
       And Doy clic en el boton staff
-    Then Debe aparecer el staff en la lista
+    Then Debe aparecer el staff en la lista 'Exitoso'
+    When Eliminar un staff creado previamente 'Eliminado'
+    Then Debe aparecer el staff en la lista 'No encontrado'

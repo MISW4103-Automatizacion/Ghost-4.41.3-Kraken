@@ -49,21 +49,50 @@ When('Doy click en el boton Send invitation now', async function () {
     return await element.click();
 });
 
-Then('Debe aparecer el staff en la lista', async function () {
+Then('Debe aparecer el staff en la lista {string}', async function (Esperado) {
     isMostrar = true;
     let i = 1;
+    let resultado;
     while(isMostrar) {
         let element = await this.driver.$('/html/body/div[2]/div/main/section/section/section[1]/div/div['+ i +']/article/div[1]/div/h3');
         let isExisting = await element.isExisting();
         if(isExisting) {
             let emailSave = await element.getText();
             if(emailSave == mail) {
-                return assert.equal(emailSave, mail);
+                resultado = 'Exitoso';
+                isMostrar = false;
             } else {
                 i++;
             }
         } else {
-            return assert.equal('', mail);
+            resultado = 'No encontrado';
+            isMostrar = false;
         }
     }
+    return await assert.equal(Esperado, resultado);
+});
+
+When('Eliminar un staff creado previamente {string}', async function (Esperado) {
+    isMostrar = true;
+    let i = 1;
+    let resultado;
+    while(isMostrar) {
+        let element = await this.driver.$('/html/body/div[2]/div/main/section/section/section[1]/div/div['+ i +']/article/div[1]/div/h3');
+        let isExisting = await element.isExisting();
+        if(isExisting) {
+            let emailSave = await element.getText();
+            if(emailSave == mail) {
+                let elementoEliminar = await this.driver.$('/html/body/div[2]/div/main/section/section/section[1]/div/div['+ i +']/article/div[2]/div/a[1]');
+                await elementoEliminar.click();
+                resultado = 'Eliminado';
+                isMostrar = false;
+            } else {
+                i++;
+            }
+        } else {
+            resultado = 'No encontrado';
+            isMostrar = false;
+        }
+    }
+    return await assert.equal(Esperado, resultado);
 });
